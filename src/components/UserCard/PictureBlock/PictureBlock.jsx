@@ -5,7 +5,7 @@ const PictureBlock = () => {
     
     return (
         <div className={scss.picture_box}>
-            <img className={scss.picture} src={picture} alt="" />
+            <img className={scss.picture} src={picture} alt="background" />
         </div>
         
     )

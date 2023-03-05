@@ -30,21 +30,22 @@ export function CounterBox() {
         setFolloversCount(isToggle ? folloversCount - 1 : folloversCount + 1);
         setColor(isToggle ? '#EBD8FF' : '#5CD3A8');
 
+
         localStorage.setItem("isToggle", isToggle);
         localStorage.setItem("folloversCount", isToggle ? folloversCount - 1 : folloversCount + 1);
         localStorage.setItem("color", isToggle ? '#EBD8FF' : '#5CD3A8');
     }
 
     return (
-        <div className={scss.user_counter_box}>
-            <div className={scss.user_number_box}>
-                <p className={scss.user_count}>777 Tweets</p>
-                <p className={scss.user_count}>{folloversCount.toLocaleString('ja-JP')}  Followers</p>
+            <div className={scss.user_counter_box}>
+                <div className={scss.user_number_box}>
+                    <p className={scss.user_count}>777 Tweets</p>
+                    <p className={scss.user_count}>{folloversCount.toLocaleString('ja-JP')}  Followers</p>
+                </div>
+                <button onClick={handleClick} style={{ backgroundColor: color }} className={scss.user_counter_btn}>
+                    {isToggle ? 'Following' : 'Folow'}
+                </button>
             </div>
-            <button onClick={handleClick} style={{backgroundColor: color}} className={scss.user_counter_btn}>
-                {isToggle ? 'Following' : 'Folow'}
-            </button>
-        </div>
     )
 }
 
